@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Add Room</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.room_number.label(class="form-label") }}
+                {{ form.room_number(class="form-control") }}
+            </div>
+            <div class="mb-3">
+                {{ form.capacity.label(class="form-label") }}
+                {{ form.capacity(class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Add Room</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

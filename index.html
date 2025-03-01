@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4">Welcome to Hostel Management</h1>
+    <p class="lead">Manage students, rooms, payments, and complaints efficiently.</p>
+</div>
+
+{% if current_user.is_authenticated %}
+<div class="row">
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Add Student</h5>
+                <p class="card-text">Add a new student to the hostel.</p>
+                <a href="{{ url_for('add_student') }}" class="btn btn-primary btn-block">Add Student</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Add Room</h5>
+                <p class="card-text">Add a new room to the hostel.</p>
+                <a href="{{ url_for('add_room') }}" class="btn btn-primary btn-block">Add Room</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">View Students</h5>
+                <p class="card-text">View all students in the hostel.</p>
+                <a href="{{ url_for('view_students') }}" class="btn btn-primary btn-block">View Students</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">View Rooms</h5>
+                <p class="card-text">View all rooms in the hostel.</p>
+                <a href="{{ url_for('view_rooms') }}" class="btn btn-primary btn-block">View Rooms</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Add Payment</h5>
+                <p class="card-text">Add a payment for a student.</p>
+                <a href="{{ url_for('add_payment') }}" class="btn btn-primary btn-block">Add Payment</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">View Payments</h5>
+                <p class="card-text">View all payments.</p>
+                <a href="{{ url_for('view_payments') }}" class="btn btn-primary btn-block">View Payments</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Add Complaint</h5>
+                <p class="card-text">Submit a complaint.</p>
+                <a href="{{ url_for('add_complaint') }}" class="btn btn-primary btn-block">Add Complaint</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">View Complaints</h5>
+                <p class="card-text">View all complaints.</p>
+                <a href="{{ url_for('view_complaints') }}" class="btn btn-primary btn-block">View Complaints</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="alert alert-info">
+    Please <a href="{{ url_for('login') }}">login</a> to access the admin panel.
+</div>
+{% endif %}
+{% endblock %}
